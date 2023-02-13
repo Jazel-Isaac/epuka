@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="app.js"></script>
+        <title>Epuka Health Monitoring App</title> 
+  </head>
+  <body>
+    <header>
+      <h1>Epuka</h1>
+      <nav>
+        <ul>
+          <li><a href="#bmi-calculator">BMI Calculator</a></li>
+          <li><a href="#pulse-tracker">Pulse Tracker</a></li>
+          <li><a href="#bp-tracker">BP Tracker</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="bmi-calculator">
+        <h2>BMI Calculator</h2>
+        <form>
+          <div>
+            <label for="weight">Weight (kg):</label>
+            <input type="text" id="weight" name="weight">
+          </div>
+          <div>
+            <label for="height">Height (cm):</label>
+            <input type="text" id="height" name="height">
+          </div>
+          <div>
+            <button type="submit">Calculate BMI</button>
+          </div>
+        </form>
+      </section>
+      <section id="pulse-tracker">
+        <h2>Pulse Tracker</h2>
+        <form>
+          <div>
+            <label for="pulse">Pulse (bpm):</label>
+            <input type="text" id="pulse" name="pulse">
+          </div>
+          <div>
+            <button type="submit">Track Pulse</button>
+          </div>
+        </form>
+      </section>
+      <section id="bp-tracker">
+        <h2>BP Tracker</h2>
+        <form>
+          <div>
+            <label for="systolic">Systolic (mmHg):</label>
+            <input type="text" id="systolic" name="systolic">
+          </div>
+          <div>
+            <label for="diastolic">Diastolic (mmHg):</label>
+            <input type="text" id="diastolic" name="diastolic">
+          </div>
+          <div>
+            <button type="submit">Track Blood Pressure</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
