@@ -1,68 +1,75 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-  <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <script src="app.js"></script>
-        <title>Epuka Health Monitoring App</title> 
-  </head>
-  <body>
-    <header>
-      <h1>Epuka</h1>
-      <nav>
-        <ul>
-          <li><a href="#bmi-calculator">BMI Calculator</a></li>
-          <li><a href="#pulse-tracker">Pulse Tracker</a></li>
-          <li><a href="#bp-tracker">BP Tracker</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section id="bmi-calculator">
-        <h2>BMI Calculator</h2>
-        <form>
-          <div>
-            <label for="weight">Weight (kg):</label>
-            <input type="text" id="weight" name="weight">
-          </div>
-          <div>
-            <label for="height">Height (cm):</label>
-            <input type="text" id="height" name="height">
-          </div>
-          <div>
-            <button type="submit">Calculate BMI</button>
-          </div>
-        </form>
-      </section>
-      <section id="pulse-tracker">
-        <h2>Pulse Tracker</h2>
-        <form>
-          <div>
-            <label for="pulse">Pulse (bpm):</label>
-            <input type="text" id="pulse" name="pulse">
-          </div>
-          <div>
-            <button type="submit">Track Pulse</button>
-          </div>
-        </form>
-      </section>
-      <section id="bp-tracker">
-        <h2>BP Tracker</h2>
-        <form>
-          <div>
-            <label for="systolic">Systolic (mmHg):</label>
-            <input type="text" id="systolic" name="systolic">
-          </div>
-          <div>
-            <label for="diastolic">Diastolic (mmHg):</label>
-            <input type="text" id="diastolic" name="diastolic">
-          </div>
-          <div>
-            <button type="submit">Track Blood Pressure</button>
-          </div>
-        </form>
-      </section>
-    </main>
-  </body>
+	<head>
+		<title>Epuka</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload landing">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="index.html">Epuka</a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="#two" class="button primary">BMI</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Banner -->
+				<section id="banner">
+					<div class="content">
+						<header>
+							<h2>Welcome to Epuka</h2>
+							<p>Your all-in-one health parameter calculator!</p>
+						</header>
+						<span class="image"><img src="images/pic01.jpg" alt="" /></span>
+					</div>
+					<a href="#two" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- Two -->
+				<section id="two" class="spotlight style2 right">
+					<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>BMI CALCULTOR</h2>
+							<p>Body Mass Index (BMI): </p>
+						</header>
+						<p>BMI is a measure of body fat based on height and weight. The formula for calculating BMI is weight (in kilograms) divided by height (in meters) squared.</p>
+						<ul class="actions">
+							<li><a href="bmi2.html" class="button">Go Calculate</a></li>
+						</ul>
+					</div>
+					<a href="#three" class="goto-next scrolly">Next</a>
+				</section>
+				
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="copyright">
+						<li>&copy; 2023. All rights reserved.</li><li>Admin: <a href="http://bigtime.netlify.app">big time media</a></li>
+					</ul>
+				</footer>
+
+		</div>
+
+
+		<!-- Scripts -->
+		
+
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>

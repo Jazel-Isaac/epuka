@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>BMI Calculator</title>
+  <script>
+    function calculateBMI() {
+      var weight = document.getElementById("weight").value; // Get weight in kg from input field
+      var height = document.getElementById("height").value; // Get height in cm from input field
+
+      // Convert height to meters
+      height = height / 100;
+
+      // Calculate BMI
+      var bmi = weight / (height * height);
+
+      // Round BMI to one decimal place
+      bmi = Math.round(bmi * 10) / 10;
+
+      // Display the result
+      document.getElementById("result").innerHTML = "Your BMI is " + bmi;
+    }
+  </script>
+</head>
+<body>
+  <h1>BMI Calculator</h1>
+  <form onsubmit="event.preventDefault(); calculateBMI();">
+    <label for="weight">Weight (kg):</label>
+    <input type="number" id="weight" name="weight" required>
+
+    <label for="height">Height (cm):</label>
+    <input type="number" id="height" name="height" required>
+
+    <button type="submit">Calculate BMI</button>
+  </form>
+
+  <p id="result"></p>
+
+
+  <table>
+	<caption>BMI Stats Table</caption>
+	<thead>
+	  <tr>
+		<th>BMI Category</th>
+		<th>BMI Range</th>
+		<th>Health Risk</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <tr>
+		<td>Underweight</td>
+		<td>&lt;18.5</td>
+		<td>Increased</td>
+	  </tr>
+	  <tr>
+		<td>Normal weight</td>
+		<td>18.5-24.9</td>
+		<td>Least</td>
+	  </tr>
+	  <tr>
+		<td>Overweight</td>
+		<td>25-29.9</td>
+		<td>Increased</td>
+	  </tr>
+	  <tr>
+		<td>Obese Class I</td>
+		<td>30-34.9</td>
+		<td>High</td>
+	  </tr>
+	  <tr>
+		<td>Obese Class II</td>
+		<td>35-39.9</td>
+		<td>Very High</td>
+	  </tr>
+	  <tr>
+		<td>Obese Class III</td>
+		<td>&ge;40</td>
+		<td>Extremely High</td>
+	  </tr>
+	</tbody>
+  </table>
+  
+  <p>Note: This table is based on the World Health Organization (WHO) classification of BMI categories. However, BMI is just one of many health parameters and should not be used as the sole indicator of health. It's always a good idea to consult with a healthcare professional to determine the best approach for managing your health.</p>
+  
+</body>
+</html>
