@@ -28,6 +28,19 @@
   </script>
 </head>
 <body>
+
+	<!-- Header -->
+	<header id="header">
+		<h1 id="logo"><a href="index.html">Epuka</a></h1>
+		<nav id="nav">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="#two" class="button primary">BMI</a></li>
+			</ul>
+		</nav>
+	</header>
+
+<section id="BMI">
   <h1>BMI Calculator</h1>
   <form onsubmit="event.preventDefault(); calculateBMI();">
     <label for="weight">Weight (kg):</label>
@@ -41,7 +54,8 @@
 
   <p id="result"></p>
 
-
+</section>
+<section id="BMITable">
   <table>
 	<caption>BMI Stats Table</caption>
 	<thead>
@@ -86,6 +100,8 @@
   </table>
   
   <p>Note: This table is based on the World Health Organization (WHO) classification of BMI categories. However, BMI is just one of many health parameters and should not be used as the sole indicator of health. It's always a good idea to consult with a healthcare professional to determine the best approach for managing your health.</p>
-  
+</section>
+
+
 </body>
 </html>
