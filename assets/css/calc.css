@@ -1,13 +1,13 @@
 /* Example styles for the BMI Calculator form */
 #BMI {
-    background-color: #f8f8f8;
+    background-color: #000000;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   }
   
   #BMI h1 {
-    color: #333;
+    color: #ffffff;
     font-size: 24px;
     margin-bottom: 20px;
   }
