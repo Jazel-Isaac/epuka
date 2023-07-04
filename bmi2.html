@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Epuka-BMI Calculator</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/calc.css" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<link rel="icon" href="./images/Health_logo2.ico" type="image/x-icon">
-		<link rel="shortcut icon" href="./images/Health_logo2.ico" type="image/x-icon">
+  <title>Epuka-BMI Calculator</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/calc.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <link rel="icon" href="./images/Health_logo2.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./images/Health_logo2.ico" type="image/x-icon">
+  <style>
+    header#header {
+      position: relative;
+      z-index: 1000;
+    }
+
+    h1#logo {
+      position: relative;
+      z-index: 1001;
+    }
+  </style> 
   <script>
     function calculateBMI() {
       var weight = document.getElementById("weight").value; // Get weight in kg from input field
@@ -25,84 +36,139 @@
 
       // Display the result
       document.getElementById("result").innerHTML = "Your BMI is " + bmi;
+
+      // Display the rating value and other values
+      var ratingInfo = getRating(bmi);
+      document.getElementById("rating").innerHTML = "Rating: " + ratingInfo.rating;
+      document.getElementById("bmiRange").innerHTML = "BMI Range: " + ratingInfo.bmiRange;
+      document.getElementById("healthRisk").innerHTML = "Health Risk: " + ratingInfo.healthRisk;
+    }
+
+    function getRating(bmi) {
+      if (bmi < 18.5) {
+        return {
+          rating: "Underweight",
+          bmiRange: "<18.5",
+          healthRisk: "Increased"
+        };
+      } else if (bmi >= 18.5 && bmi <= 24.9) {
+        return {
+          rating: "Normal weight",
+          bmiRange: "18.5-24.9",
+          healthRisk: "Least"
+        };
+      } else if (bmi >= 25 && bmi <= 29.9) {
+        return {
+          rating: "Overweight",
+          bmiRange: "25-29.9",
+          healthRisk: "Increased"
+        };
+      } else if (bmi >= 30 && bmi <= 34.9) {
+        return {
+          rating: "Obese Class I",
+          bmiRange: "30-34.9",
+          healthRisk: "High"
+        };
+      } else if (bmi >= 35 && bmi <= 39.9) {
+        return {
+          rating: "Obese Class II",
+          bmiRange: "35-39.9",
+          healthRisk: "Very High"
+        };
+      } else {
+        return {
+          rating: "Obese Class III",
+          bmiRange: "≥40",
+          healthRisk: "Extremely High"
+        };
+      }
     }
   </script>
 </head>
 <body>
 
-	<!-- Header -->
-	<header id="header">
-		<h1 id="logo"><a href="index.html">Epuka</a></h1>
-		<nav id="nav">
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="#two" class="button primary">BMI</a></li>
-			</ul>
-		</nav>
-	</header>
+  <!-- Header -->
+  <header id="header">
+    <h1 id="logo"><a href="index.html">Epuka</a></h1>
+    <nav id="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#two" class="button primary">BMI</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<section id="BMI">
-  <h1>BMI Calculator</h1>
-  <form onsubmit="event.preventDefault(); calculateBMI();">
-    <label for="weight">Weight (kg):</label>
-    <input type="number" id="weight" name="weight" required aria-label="Weight in kilograms">
+  <section id="BMI">
+    <h1>BMI Calculator</h1>
+    <form onsubmit="event.preventDefault(); calculateBMI();">
+      <label for="weight">Weight (kg):</label>
+      <input type="number" id="weight" name="weight" required aria-label="Weight in kilograms">
 
-    <label for="height">Height (cm):</label>
-    <input type="number" id="height" name="height" required aria-label="Height in centimeters">
+      <label for="height">Height (cm):</label>
+      <input type="number" id="height" name="height" required aria-label="Height in centimeters">
 
-    <button type="submit" aria-label="Calculate BMI">Calculate BMI</button>
-  </form>
+      <button type="submit" aria-label="Calculate BMI">Calculate BMI</button>
+    </form>
 
-  <p id="result"></p>
+    <p id="result"></p>
+    <p id="rating"></p>
+    <p id="bmiRange"></p>
+    <p id="healthRisk"></p>
 
-</section>
-<section id="BMITable">
-  <table>
-	<caption>BMI Stats Table</caption>
-	<thead>
-	  <tr>
-		<th>BMI Category</th>
-		<th>BMI Range</th>
-		<th>Health Risk</th>
-	  </tr>
-	</thead>
-	<tbody>
-	  <tr>
-		<td>Underweight</td>
-		<td>&lt;18.5</td>
-		<td>Increased</td>
-	  </tr>
-	  <tr>
-		<td>Normal weight</td>
-		<td>18.5-24.9</td>
-		<td>Least</td>
-	  </tr>
-	  <tr>
-		<td>Overweight</td>
-		<td>25-29.9</td>
-		<td>Increased</td>
-	  </tr>
-	  <tr>
-		<td>Obese Class I</td>
-		<td>30-34.9</td>
-		<td>High</td>
-	  </tr>
-	  <tr>
-		<td>Obese Class II</td>
-		<td>35-39.9</td>
-		<td>Very High</td>
-	  </tr>
-	  <tr>
-		<td>Obese Class III</td>
-		<td>&ge;40</td>
-		<td>Extremely High</td>
-	  </tr>
-	</tbody>
-  </table>
-  
-  <p>Note: This table is based on the World Health Organization (WHO) classification of BMI categories. However, BMI is just one of many health parameters and should not be used as the sole indicator of health. It's always a good idea to consult with a healthcare professional to determine the best approach for managing your health.</p>
-</section>
+  </section>
 
+  <section id="BMITable">
+    <table>
+      <caption>BMI Stats Table</caption>
+      <thead>
+        <tr>
+          <th>BMI Category</th>
+          <th>BMI Range</th>
+          <th>Health Risk</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Underweight</td>
+          <td>&lt;18.5</td>
+          <td>Increased</td>
+        </tr>
+        <tr>
+          <td>Normal weight</td>
+          <td>18.5-24.9</td>
+          <td>Least</td>
+        </tr>
+        <tr>
+          <td>Overweight</td>
+          <td>25-29.9</td>
+          <td>Increased</td>
+        </tr>
+        <tr>
+          <td>Obese Class I</td>
+          <td>30-34.9</td>
+          <td>High</td>
+        </tr>
+        <tr>
+          <td>Obese Class II</td>
+          <td>35-39.9</td>
+          <td>Very High</td>
+        </tr>
+        <tr>
+          <td>Obese Class III</td>
+          <td>&ge;40</td>
+          <td>Extremely High</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Note: This table is based on the World Health Organization (WHO) classification of BMI categories. However, BMI is just one of many health parameters and should not be used as the sole indicator of health. It's always a good idea to consult with a healthcare professional to determine the best approach for managing your health.</p>
+  </section>
+ <!-- Footer -->
+ <footer id="footer">
+	<ul class="copyright">
+		<li>&copy; 2023. All rights reserved.</li><li>Admin: <a href="http://bigtime.netlify.app">big time media</a></li>
+	</ul>
+</footer>
 
 </body>
 </html>
